@@ -1,10 +1,5 @@
 package api.test;
 
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
-
-import org.apache.http.util.Asserts;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -34,11 +29,29 @@ public class UserTest {
 		userPayload.setPhone(faker.phoneNumber().cellPhone());
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void PostMethod() {
 		Response res = UserEndPoint.createUser(userPayload);
 		res.then().log().all();
 		Assert.assertEquals(res.statusCode(), 200);
 	}
 
+	@Test(priority = 2)
+	public void GetMethod() {
+		Response res = UserEndPoint.readUser(this.userPayload.getUsername());
+		res.then().log().all();
+		Assert.assertEquals(res.statusCode(), 200);
+	}
+
+	@Test(priority = 3)
+	public void PutMethod() {
+		Response res = UserEndPoint.updateUser(userPayload, this.userPayload.getUsername());
+		res.then().log().all();
+		Assert.assertEquals(res.statusCode(), 200);
+	}
+
+	@Test(priority = 4)
+	public void DeleteMethod() {
+		UserEndPoint.deleteUser(this.userPayload.getUsername()).then().statusCode(200).log().all();
+	}
 }

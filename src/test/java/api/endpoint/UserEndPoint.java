@@ -19,7 +19,7 @@ public class UserEndPoint {
 	}
 
 	// GET
-	public static Response redUser(String userName) {
+	public static Response readUser(String userName) {
 		Response responce = given().pathParam("username", userName)
 
 				.when().get(Routes_URL.get_url);

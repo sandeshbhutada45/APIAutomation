@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Practices.DiffResponceBodyExternalFile">
+      <class name="api.test.UserTest">
         <methods>
-          <include name="responceBodyHashMap"/>
+          <include name="DeleteMethod"/>
+          <include name="setupData"/>
         </methods>
-      </class> <!-- Practices.DiffResponceBodyExternalFile -->
+      </class> <!-- api.test.UserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
