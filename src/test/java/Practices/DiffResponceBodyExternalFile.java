@@ -1,19 +1,15 @@
 package Practices;
 
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.HashMap;
 
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.annotations.Test;
-
-import com.google.gson.JsonObject;
 
 public class DiffResponceBodyExternalFile {
 
@@ -42,7 +38,7 @@ public class DiffResponceBodyExternalFile {
 	void delete() {
 		given()
 		
-		.when().delete("http://localhost:3000/students/4")
+		.when().delete("http://localhost:3000/students/2")
 		
 		.then().statusCode(200).log().all();
 	}

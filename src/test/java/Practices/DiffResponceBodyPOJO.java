@@ -14,7 +14,7 @@ public class DiffResponceBodyPOJO {
 		pp.setName("Sandesh");
 		pp.setId("4");
 		pp.setPhone("25478548");
-		pp.setPlace("Amravati");
+		pp.setPlace("Nagpur");
 		String courarr[]= {"Java", "C#"};	
 		pp.setCourses(courarr);
 		
