@@ -1,4 +1,4 @@
-package Practices;
+package Practice;
 
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.*;

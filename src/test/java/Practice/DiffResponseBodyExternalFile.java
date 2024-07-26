@@ -1,4 +1,4 @@
-package Practices;
+package Practice;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
@@ -11,10 +11,10 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.testng.annotations.Test;
 
-public class DiffResponceBodyExternalFile {
+public class DiffResponseBodyExternalFile {
 
-	@Test (priority = 1)
-	void responceBodyHashMap() throws FileNotFoundException {
+	@Test 
+	void responseBodyHashMap() throws FileNotFoundException {
 		
 		File file= new File(".//body.json");
 		FileReader fr = new FileReader(file);
@@ -26,13 +26,26 @@ public class DiffResponceBodyExternalFile {
 		.when().post("http://localhost:3000/students")
 		
 		.then().statusCode(201)
-		.body("name", equalTo("Sandesh")).body("id",equalTo("4"))
-		.body("place", equalTo("Amravati"))
-		.body("phone", equalTo("25478548")).body("courses[0]", equalTo("Java")).body("courses[1]", equalTo("C#"))
+		.body("name", equalTo("Tester")).body("id",equalTo("4"))
+		.body("place", equalTo("NewYork"))
+		.body("phone", equalTo("99999")).body("courses[0]", equalTo("Java")).body("courses[1]", equalTo("C#"))
 		.header("Content-Type", "application/json")
 		.log().all();		
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Test (priority = 2)
 	void delete() {

@@ -1,20 +1,21 @@
-package Practices;
+package Practice;
 
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
+
 import java.util.HashMap;
+
 import org.testng.annotations.Test;
 
-public class DiffResponceBodyHashMap {
+public class DiffResponseBodyHashMap {
 
-	@Test (priority = 1)
-	void responceBodyHashMap() {
+	@Test
+	void responseBodyHashMap() {
 		
-		HashMap data= new HashMap();
-		data.put("name", "Sandesh");
+		HashMap<String, Object> data= new HashMap<String, Object>();
+		data.put("name", "Tester");
 		data.put("id", "4");
-		data.put("location", "Nagpur");
+		data.put("location", "China");
 		data.put("phone", "123456789");
 		String courArr[]= {"C","C++"};
 		data.put("courses", courArr);
@@ -24,12 +25,23 @@ public class DiffResponceBodyHashMap {
 		.when().post("http://localhost:3000/students")
 		
 		.then().statusCode(201)
-		.body("name", equalTo("Sandesh")).body("id", equalTo("4")).body("location", equalTo("Nagpur"))
+		.body("name", equalTo("Tester")).body("id", equalTo("4")).body("location", equalTo("China"))
 		.body("phone", equalTo("123456789")).body("courses[0]", equalTo("C")).body("courses[1]", equalTo("C++"))
 		.header("Content-Type", "application/json")
 		.log().all();		
 		
 	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	@Test (priority = 2)
 	void delete() {

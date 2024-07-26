@@ -1,8 +1,8 @@
 {
   "id": "4",
-  "name": "Sandesh",
-  "place": "Amravati",
-  "phone": "25478548",
+  "name": "Tester",
+  "place": "NewYork",
+  "phone": "99999",
   "courses": [
     "Java",
     "C#"
