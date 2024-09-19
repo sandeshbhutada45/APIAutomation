@@ -1,8 +1,9 @@
 package Practice;
 
+import static org.hamcrest.Matchers.equalTo;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static org.hamcrest.Matchers.equalTo;
 
 import api.pojoPayload.User;
 import io.restassured.RestAssured;

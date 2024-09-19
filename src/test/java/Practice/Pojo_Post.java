@@ -36,7 +36,7 @@ public class Pojo_Post {
 	public void setId(String id) {
 		this.id = id;
 	}
-
+	
 	
 	
 }

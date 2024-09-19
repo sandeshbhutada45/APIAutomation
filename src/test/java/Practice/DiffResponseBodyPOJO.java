@@ -9,7 +9,6 @@ public class DiffResponseBodyPOJO {
 
 	@Test 
 	void responseBodyHashMap() {
-		
 		Pojo_Post pp= new Pojo_Post();
 		pp.setName("Test");
 		pp.setId("4");

@@ -2,6 +2,7 @@ package Practice;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
