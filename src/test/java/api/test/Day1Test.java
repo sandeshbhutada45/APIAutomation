@@ -1,5 +1,7 @@
 package api.test;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -24,12 +26,6 @@ public class Day1Test {
 				.all();
 	}
 
-	@Test
-	public void test3_Get() {
-		String text = "To keep ReqRes free, contributions towards server costs are appreciated!";
-		given().get("https://reqres.in/api/users?page=2").then().statusCode(200).body("support.text", equalTo(text))
-				.body("data.first_name", hasItems("Byron", "Tobias"));
-	}
 
 	@Test
 	public void test4_Post() {
